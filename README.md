@@ -5,12 +5,12 @@
 ## Install
 
 ```bash
-    $ tnpm i folder-to-tree --save
+    $ npm i folder-to-tree --save
 ```
 
 ```bash
     # command line usage
-    $ tnpm i folder-to-tree -g
+    $ npm i folder-to-tree -g
     $ folder2tree
 ```
 
