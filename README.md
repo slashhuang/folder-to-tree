@@ -19,10 +19,10 @@ a folder to tree npm module built with typescript
 ## Usage
 
 ```js
-    export interface IFolder2JsonOptions {
+    export interface IFolder2TreeOptions {
         isIgnoreHiddenFolderOrFile: boolean; // default true
         ignoreFilePattern: RegExp; // deault to /node_modules/
-        reachLeafNodeCallback: (leafPath: string) => any; // default to str=>str
+        reachLeafNodeCallback: (leafPath: string) => string; // default to str=>str,renders leafNode string
     }
     import { folderToTree } from 'folder-to-tree';
     const json = folderToTree(dirName, options); // gets foler structure to json

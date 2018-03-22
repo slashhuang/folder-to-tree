@@ -37,8 +37,8 @@ const buildTreeModel = (linkNodeRef: IMap<Object>,
 };
 
 export function folderToTree (dirName: string, options: IFolder2TreeOptions = defaultOption): undefined|IMap<Object> {
-    const isDirNameNotValid: boolean = fs.existsSync(dirName);
-    if (!isDirNameNotValid) {
+    const isDirNameValid: boolean = fs.existsSync(dirName);
+    if (!isDirNameValid) {
         return undefined;
     } else {
         const RootNode = {};

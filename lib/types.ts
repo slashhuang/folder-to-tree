@@ -9,5 +9,5 @@ export interface IException {
 export interface IFolder2TreeOptions {
     isIgnoreHiddenFolderOrFile: boolean; // default true
     ignoreFilePattern: RegExp;
-    reachLeafNodeCallback: (leafPath: string) => any;
+    reachLeafNodeCallback: (leafPath: string) => string;
 }
