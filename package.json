@@ -1,0 +1,41 @@
+{
+  "name": "folder-to-tree",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "folder2tree": "dist/bin.js"
+  },
+  "description": "a folder to json npm module built with typescript",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "slashhuang",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/jest/bin/jest.js --forceExit --coverage --verbose",
+    "prepublish": "npm run tslint && npm run build",
+    "build": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json"
+  },
+  "pre-commit": [
+    "tslint"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "urllib": "^2.26.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "@types/lodash": "^4.14.104",
+    "@types/node": "^9.4.7",
+    "jest": "^22.4.2",
+    "pre-commit": "^1.2.2",
+    "source-map-support": "^0.5.4",
+    "ts-jest": "^22.4.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  }
+}
