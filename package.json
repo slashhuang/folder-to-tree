@@ -1,6 +1,6 @@
 {
   "name": "folder-to-tree",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "bin": {
@@ -9,7 +9,7 @@
   "description": "a folder to json npm module built with typescript",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/slashhuang/folder-to-tree"
   },
   "author": "slashhuang",
   "license": "MIT",

@@ -12,14 +12,15 @@ const buildTreeModel = (linkNodeRef: IMap<Object>,
                         currentDirName: string,
                         options: IFolder2TreeOptions): IMap<Object>  => {
     const listStrNode: string[] = (fs.readdirSync(currentDirName, {encoding: 'utf8'}) || [])
-                .filter((subFileName: string) => {
-                    const isIgnorePattern: boolean = options.ignoreFilePattern.test(subFileName);
-                    if (options.isIgnoreHiddenFolderOrFile) {
-                        return !/^\..*/.test(subFileName) && !isIgnorePattern;
-                    } else {
-                        return !isIgnorePattern;
-                    }
-                });
+            .filter((subFileName: string) => {
+                const isIgnorePattern: boolean = options.ignoreFilePattern.test(subFileName);
+                const hiddenFileRegPattern: RegExp = /^\..*/;
+                if (options.isIgnoreHiddenFolderOrFile) {
+                    return !hiddenFileRegPattern.test(subFileName) && !isIgnorePattern;
+                } else {
+                    return !isIgnorePattern;
+                }
+            });
     for (let index = 0; index < listStrNode.length; index++) {
         const currentFileName: string = listStrNode[index];
         const currentFileAbsPath = path.resolve(currentDirName, currentFileName);

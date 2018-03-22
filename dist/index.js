@@ -11,8 +11,9 @@ var buildTreeModel = function (linkNodeRef, currentDirName, options) {
     var listStrNode = (fs.readdirSync(currentDirName, { encoding: 'utf8' }) || [])
         .filter(function (subFileName) {
         var isIgnorePattern = options.ignoreFilePattern.test(subFileName);
+        var hiddenFileRegPattern = /^\..*/;
         if (options.isIgnoreHiddenFolderOrFile) {
-            return !/^\..*/.test(subFileName) && !isIgnorePattern;
+            return !hiddenFileRegPattern.test(subFileName) && !isIgnorePattern;
         }
         else {
             return !isIgnorePattern;
