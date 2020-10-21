@@ -20,11 +20,11 @@ a folder to tree npm module built with typescript
 
 ```js
     export interface IFolder2TreeOptions {
-        isIgnoreHiddenFolderOrFile: boolean; // default true
-        ignoreFilePattern: RegExp; // deault to /node_modules/
-        reachLeafNodeCallback: (leafPath: string) => string; // default to str=>str,renders leafNode string
+        isIgnoreHiddenFolderOrFile: boolean; // default to true
+        ignoreFilePattern: RegExp; // default to /node_modules/
+        reachLeafNodeCallback: (leafPath: string) => string; // default to render leafNode absolute file path
     }
     import { folderToTree } from 'folder-to-tree';
-    const json = folderToTree(dirName, options); // gets foler structure to json
+    const json = folderToTree(dirName, options); // reads folder structure into json
 ```
 
